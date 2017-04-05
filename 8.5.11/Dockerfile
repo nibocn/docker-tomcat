@@ -17,6 +17,8 @@ RUN cd /tmp \
     && ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
     && echo $TZ > /etc/timezone
 
+WORKDIR /opt/tomcat
+
 EXPOSE 8080
 
 CMD ["catalina.sh", "run"]
