@@ -21,4 +21,8 @@ WORKDIR /opt/tomcat
 
 EXPOSE 8080
 
-CMD ["catalina.sh", "run"]
+ENV RESERVED_MEGABYTES 64
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+CMD ["/entrypoint.sh"]
